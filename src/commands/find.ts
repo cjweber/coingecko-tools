@@ -13,7 +13,7 @@ export const builder: CommandBuilder<Options, Options> = (yargs) =>
   yargs
     .options({
       term: { type: 'string', required: true },
-    })
+    });
 
 export const handler = async (argv: Arguments<Options>): Promise<void> => {
   const { term } = argv;
@@ -29,9 +29,9 @@ const findId = async (term: string) => {
         params:
           { query: term }
       }
-    )
-    console.log(`Top 3: ${JSON.stringify(response.data.coins.slice(0, 3), null, 2)}`)
+    );
+    console.log(`Top 3: ${JSON.stringify(response.data.coins.slice(0, 3), null, 2)}`);
   } catch (error) {
-    console.log(error)
+    console.log(error);
   }
 }

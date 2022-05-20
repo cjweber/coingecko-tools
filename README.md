@@ -3,8 +3,10 @@ This repo is intended to be a set of CLI commands for interacting with the Coing
 
 ## Setup
 1. Clone the repo
-2. Run `npx tsc` at the top level
-3. Use commands to find coin ids, add / remove coin ids to check, and to check price data of coins you have added to the check list. Confused? run (from base of directory) `./build/cli.js help`
+2. Run `npm install` at the top level
+3. Run `npx tsc` at the top level
+4. `chmod 755 ./build/cli.js`
+5. Use commands to find coin ids, add / remove coin ids to check, and to check price data of coins you have added to the check list. Confused? run (from base of directory) `./build/cli.js help`
 
 ## Notes
 1. You can pass any filepath for your ids with arguments i.e.: `./build/cli.js check --coinIdFilepath /Users/0xcjw/Code/coinchecker/coinidsEXAMPLE.txt`, otherwise `coinids.txt` will be initialized in the repo directory when you add your first coin

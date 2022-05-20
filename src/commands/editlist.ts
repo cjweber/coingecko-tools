@@ -10,7 +10,7 @@ type Options = {
 
 
 export const command: string = 'editlist';
-export const desc: string = 'Edit list of ids to check'
+export const desc: string = 'Edit list of ids to check';
 
 export const builder: CommandBuilder<Options, Options> = (yargs) =>
   yargs
@@ -19,11 +19,11 @@ export const builder: CommandBuilder<Options, Options> = (yargs) =>
       dry: { type: 'boolean' },
       id: { type: 'string', default: "" },
       remove: { type: 'boolean' }
-    })
+    });
 
 export const handler = async (argv: Arguments<Options>): Promise<void> => {
   const { coinIdFilepath, dry, remove, id } = argv;
-  editList({ coinIdFilepath, dry, id, remove })
+  editList({ coinIdFilepath, dry, id, remove });
   process.exit(0);
 };
 
@@ -45,7 +45,7 @@ const addId = (coinIdFilepath: string, id: string) => {
 }
 const removeId = (filePath: string, id: string) => {
   console.log(`Removing ${id} ...`);
-  const fileContent = readFile(filePath)
+  const fileContent = readFile(filePath);
   const newFileContent = fileContent.replace(`${id}\n`, "");
   writeFile(filePath, newFileContent);
 }
